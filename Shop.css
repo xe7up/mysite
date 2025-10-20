@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+
+body {
+  height: 100vh;
+  background:#000;
+  color:#fff;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* 🔥 Canlı gradient arxa fon */
+.animated-bg {
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: linear-gradient(45deg, #fff, #000, #fff, #000);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: gradientShift 12s ease infinite;
+  opacity: 0.2;
+}
+
+@keyframes gradientShift {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+/* Header */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:25px 60px;
+  position:relative;
+  z-index:1;
+}
+
+.logo { font-weight:700; font-size:1.5rem; color:#fff; }
+.logo span { color:#999; }
+
+nav a {
+  margin-left:25px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:500;
+  position:relative;
+  transition:0.3s;
+}
+
+nav a::after {
+  content:"";
+  position:absolute;
+  width:0%; height:2px; bottom:-3px; left:0;
+  background:#fff;
+  transition:0.3s;
+}
+
+nav a:hover::after { width:100%; }
+
+/* Main & Cards */
+main { text-align:center; margin-top:80px; position:relative; z-index:1; }
+main h1 { font-size:2rem; margin-bottom:50px; }
+
+.cards {
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  flex-wrap:wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid #fff;
+  border-radius:25px;
+  width:320px;
+  padding:40px;
+  transition:0.4s;
+  backdrop-filter: blur(15px);
+}
+
+.card:hover {
+  transform:translateY(-10px);
+  border-image: linear-gradient(90deg, #fff, #ccc) 1;
+  box-shadow:0 0 30px rgba(255,255,255,0.4);
+}
+
+.card h2 {
+  font-size:1.4rem;
+  margin-bottom:25px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  padding-bottom:10px;
+}
+
+.prices { text-align:left; margin-top:20px; }
+.prices div {
+  display:flex; justify-content:space-between;
+  margin:12px 0;
+  color:#ccc;
+}
+.prices b { color:#fff; }
+
+button {
+  margin-top:30px;
+  width:100%;
+  padding:12px 0;
+  background:none;
+  color:#fff;
+  border:2px solid #fff;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  background:#fff; color:#000;
+  transform:scale(1.05);
+}
